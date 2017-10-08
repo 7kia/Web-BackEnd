@@ -15,7 +15,9 @@ security:
 
         main:
             anonymous: ~
-            http_basic: ~
+#            access_control:
+#                - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#                - { path: ^/, roles: ROLE_ADMIN }
             # activate different ways to authenticate
 
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
@@ -25,7 +27,7 @@ security:
 #            form_login:
 #                login_path: login
 #                check_path: login
-#            access_control:
-#                - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-#                - { path: ^/, roles: ROLE_ADMIN }        
+    access_control:
+    # require ROLE_ADMIN for /admin*
+    - { path: ^/admin, roles: ROLE_ADMIN }
         

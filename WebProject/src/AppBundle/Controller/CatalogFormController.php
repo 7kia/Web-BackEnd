@@ -13,7 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 class CatalogFormController extends Controller
 {
     /**
-    * @Route("/forms/catalog")
+    * @Route("/catalog")
     */
     public function newAction(Request $request)
     {
@@ -29,7 +29,7 @@ class CatalogFormController extends Controller
             ->add('save', SubmitType::class, array('label' => 'Create Post'))
             ->getForm();
 
-        return $this->render('forms/catalog.html.twig', array(
+        return $this->render('catalog.html.twig', array(
             'form' => $form->createView(),
         ));
     }
