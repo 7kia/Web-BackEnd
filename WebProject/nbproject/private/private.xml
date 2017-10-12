@@ -3,8 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/SDK/Symfony/Project1/src/AppBundle/AppBundle.php</file>
-            <file>file:/F:/SDK/Symfony/Project1/src/AppBundle/Controller/LuckyController.php</file>
+            <file>file:/F:/Study/7_Semester/Web-BackEnd+/WebProject/app/config/config.yml</file>
+            <file>file:/F:/Study/7_Semester/Web-BackEnd+/WebProject/src/AppBundle/Controller/LuckyController.php</file>
+            <file>file:/F:/Study/7_Semester/Web-BackEnd+/WebProject/src/AppBundle/Controller/RegistrationController.php</file>
+            <file>file:/F:/Study/7_Semester/Web-BackEnd+/WebProject/src/AppBundle/Entity/Entity/User.php</file>
+            <file>file:/F:/Study/7_Semester/Web-BackEnd+/WebProject/src/AppBundle/Entity/User.php</file>
+            <file>file:/F:/Study/7_Semester/Web-BackEnd+/WebProject/app/config/routing.yml</file>
+            <file>file:/F:/Study/7_Semester/Web-BackEnd+/WebProject/app/AppKernel.php</file>
+            <file>file:/F:/Study/7_Semester/Web-BackEnd+/WebProject/app/config/security.yml</file>
+            <file>file:/F:/Study/7_Semester/Web-BackEnd+/WebProject/src/AppBundle/Repository/UserRepository.php</file>
         </group>
     </open-files>
 </project-private>
