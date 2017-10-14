@@ -11,6 +11,8 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class RegistrationController extends Controller
 {
+    // TODO : когда админ сможет редактировать список пользователей поменяй:
+    // return $this->redirectToRoute('catalog');// 40-41 строка
     /**
      * @Route("/register", name="user_registration")
      */
@@ -36,7 +38,7 @@ class RegistrationController extends Controller
             // ... do any other work - like sending them an email, etc
             // maybe set a "flash" success message for the user
             
-            return $this->redirectToRoute('catalog_route');  
+            return $this->redirectToRoute('catalog');  
         }
 
         return $this->render(

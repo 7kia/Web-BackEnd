@@ -13,7 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 class CatalogFormController extends Controller
 {
     /**
-    * @Route("/catalog", name="catalog_route")
+    * @Route("/catalog", name="catalog")
     */
     public function newAction(Request $request)
     {
