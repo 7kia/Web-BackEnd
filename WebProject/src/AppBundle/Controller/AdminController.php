@@ -14,9 +14,11 @@ class AdminController extends Controller
      */
     public function adminAction()
     {
-        return $this->render('admin.html.twig', array(
-            //'number' => $number,
-        ));
+        return $this->render(
+                'admin.html.twig',
+                array(
+                )
+        );
     }
 
 }

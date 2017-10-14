@@ -13,24 +13,15 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 class CatalogFormController extends Controller
 {
     /**
-    * @Route("/catalog")
+    * @Route("/catalog", name="catalog_route")
     */
     public function newAction(Request $request)
     {
         
-        // create a task and give it some dummy data for this example
-        $task = new Task();
-        $task->setTask('Write a blog post');
-        $task->setDueDate(new \DateTime('tomorrow'));
-
-        $form = $this->createFormBuilder($task)
-            ->add('task', TextType::class)
-            ->add('dueDate', DateType::class)
-            ->add('save', SubmitType::class, array('label' => 'Create Post'))
-            ->getForm();
-
-        return $this->render('catalog.html.twig', array(
-            'form' => $form->createView(),
-        ));
+        return $this->render(
+                'catalog.html.twig',
+                array(
+                )
+        );
     }
 }

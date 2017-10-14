@@ -48,7 +48,11 @@ class User implements UserInterface, \Serializable
      */
     private $password;
     
-
+    /**
+     * @ORM\Column(name="isAdmin", type="boolean")
+     */
+    private $isAdmin;
+    
     /**
      * @ORM\Column(name="is_active", type="boolean")
      */
@@ -102,7 +106,17 @@ class User implements UserInterface, \Serializable
     {
         $this->password = $password;
     }
+   
+    public function getIsAdmin()
+    {
+        return $this->isAdmin;
+    }
 
+    public function setIsAdmin($isAdmin)
+    {
+        $this->isAdmin = $isAdmin;
+    }
+    
     public function getSalt()
     {
         // The bcrypt algorithm doesn't require a separate salt.
