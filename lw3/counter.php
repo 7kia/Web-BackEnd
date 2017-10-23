@@ -1,5 +1,4 @@
 <?php
-
 header('Content-Type:text/html; charset=utf-8');
 
 const ARG_COUNT = 1;
@@ -19,13 +18,18 @@ try
         header('HTTP/1.0 400');
         throw new Exception('Используй: <stirng>:string');
     }
+	$text = preg_split(
+		'//u',
+		mb_strtolower(
+			getParamFromGetRequest('string'),
+			'UTF-8'
+		),
+		-1,
+		PREG_SPLIT_NO_EMPTY
+	);
     print_r(
         array_count_values(
-            str_split(
-                strtolower(
-                    getParamFromGetRequest('string')
-                )
-            )
+            $text
         )
     );
 }
