@@ -1,13 +1,11 @@
-п»ї<?php
-header('Content-Type: text/html');
+<?php
 
 const ARG_COUNT = 3;
 const OPERATION_ARGUMENT_NAME = 'operation';
 
 function getParamFromGetRequest($arg_name)
 {
-    if(isset($_GET[$arg_name]))
-    {
+    if(isset($_GET[$arg_name])) {
         return $_GET[$arg_name];
     }
     
@@ -17,8 +15,7 @@ function getParamFromGetRequest($arg_name)
 function getNumberFromGetRequest($arg_name)
 {
     $number = GetParamFromGetRequest($arg_name);
-    if(is_numeric($number))
-    {
+    if(is_numeric($number)) {
         return intval($number);
     }
     throw new UnexpectedValueException($arg_name);
@@ -40,9 +37,8 @@ function calculateResult(
         return $firstNumber * $secondNumber;
         break;
     case "div":
-        if($secondNumber === 0)
-        {
-            throw new Exception("РќР° РЅРѕР»СЊ РґРµР»РёС‚СЊ РЅРµР»СЊР·СЏ!");
+        if($secondNumber === 0) {
+            throw new Exception("На ноль делить нельзя!");
         }
         return $firstNumber / $secondNumber;
     default:
@@ -55,24 +51,24 @@ try
     if(count($_GET) != ARG_COUNT)
     {
         throw new Exception(
-			'Р”РѕР»Р¶РЅС‹ Р±С‹С‚СЊ СЃР»РµРґСѓСЋС‰РёРµ Р°СЂРіСѓРјРµРЅС‚С‹: 
-			arg1(С‡РёСЃР»Рѕ) agr2(С‡РёСЃР»Рѕ) operation("add"/"mul"/"div"/"sub")'
+			'Должны быть следующие аргументы: 
+			arg1(число) agr2(число) operation("add"/"mul"/"div"/"sub")'
 		);
     }
 
     echo calculateResult(
-		getParamFromGetRequest(OPERATION_ARGUMENT_NAME),
-		getNumberFromGetRequest('arg1'),
-        getNumberFromGetRequest('arg2')
+            getParamFromGetRequest(OPERATION_ARGUMENT_NAME),
+            getNumberFromGetRequest('arg1'),
+            getNumberFromGetRequest('arg2')
 	);
 }
 catch (InvalidArgumentException $e)
 {
-    echo 'РћС€РёР±РєР°, РЅРµ РїРµСЂРµРґР°РЅ Р°СЂРіСѓРјРµРЅС‚ ' . $e->getMessage() , '!';
+    echo 'Ошибка, не передан аргумент ' . $e->getMessage() , '!';
 }
 catch (UnexpectedValueException $e)
 {
-    echo 'РђСЂРіСѓРјРµРЅС‚ ' . $e->getMessage() . ' РёРјРµРµС‚ РЅРµРєРєРѕСЂРµРєС‚РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ!';
+    echo 'Аргумент ' . $e->getMessage() . ' имеет неккоректное значение!';
 }
 catch (Exception $e)
 {
