@@ -1,12 +1,10 @@
-﻿<?php
-header('Content-Type: text/html');
-
+<?php
+header('Content-Type:text/html; charset=utf-8');
 const ARG_COUNT = 1;
 
 function getParamFromGetRequest($arg_name)
 {
-    if(isset($_GET[$arg_name]))
-    {
+    if(isset($_GET[$arg_name])) {
         return $_GET[$arg_name];
     }
     
@@ -15,35 +13,31 @@ function getParamFromGetRequest($arg_name)
 
 function translate($word)
 {
-	$translations = array(
-		'Keyboard' => 'Клавиатура',
-		'String' => 'Строка',
-		'Input' => 'Ввод',
-		'Output' => 'Вывод',
-		'Split' => 'Разделить',
-		'Implode' => 'Сжать'
-	);
+    $translations = array(
+        'Keyboard' => 'Клавиатура',
+        'String' => 'Строка',
+        'Input' => 'Ввод',
+        'Output' => 'Вывод',
+        'Split' => 'Разделить',
+        'Implode' => 'Сжать'
+    );
 
     $translation = array_key_exists($word, $translations) 
 		? $translations[$word]
 		: NULL;
 
-	if(empty($translation))
-	{
-		$translation = in_array($word, $translations) 
-			? array_search($word, $translations)	
-			: NULL;
-	}
+    if(empty($translation)) {
+        $translation = in_array($word, $translations) 
+                ? array_search($word, $translations)	
+                : NULL;
+    }
 
-    if(empty($translation))
-    {
+    if(empty($translation)) {
         header('HTTP/1.0 404');
         throw new Exception('Не найден перевод для слова "' . $word . '"');
     }
-    else
-    {  
-	    if(is_array($translation))
-        {
+    else {  
+        if(is_array($translation)) {
             $translation = $translation[0];
         }
         echo $translation;
@@ -52,8 +46,7 @@ function translate($word)
 
 try
 {
-    if(count($_GET) != ARG_COUNT)
-    {
+    if(count($_GET) != ARG_COUNT) {
 		header('HTTP/1.0 400');
         throw new Exception('В качестве аргумента укажите: word=<Слово>');
     }

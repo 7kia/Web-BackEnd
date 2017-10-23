@@ -1,19 +1,19 @@
 <?php
-header('Content-Type: text/html');
+header('Content-Type:text/html; charset=utf-8');
 
 const ARG_COUNT = 1;
 
 function getParamFromGetRequest($arg_name)
 {
-    if(isset($_GET[$arg_name]))
-    {
+    if(isset($_GET[$arg_name])) {
         return $_GET[$arg_name];
     }
     
     throw new InvalidArgumentException($arg_name);
 }
 
-function swap(&$first,&$second) {
+function swap(&$first, &$second) 
+{
     $tmp=$first;
     $first=$second;
     $second=$tmp;
@@ -21,30 +21,26 @@ function swap(&$first,&$second) {
 
 function reverse($array)
 {
-    if(empty($array))
-    {
+    if(empty($array)) {
         header('HTTP/1.0 400');
         throw new Exception('Массив пустой!');       
     }
-    else
-    {
-		if(gettype($array) != 'array')
-		{
-			throw new Exception('В функцию reverse передан не массив');
-		}
+    else {
+        if(gettype($array) != 'array') {
+            throw new Exception('В функцию reverse передан не массив');
+        }
 
-		$arraySize = count($array);
-		for ($i = 0; $i < ($arraySize / 2); ++$i) {
-			swap($array[$i], $array[$arraySize - 1 - $i]);
-		}
+        $arraySize = count($array);
+        for ($i = 0; $i < ($arraySize / 2); ++$i) {
+            swap($array[$i], $array[$arraySize - 1 - $i]);
+        }
         print_r($array);
     }
 }
 
 try
 {
-    if(count($_GET) != ARG_COUNT)
-    {
+    if(count($_GET) != ARG_COUNT) {
         header('HTTP/1.0 400');
         throw new Exception('Используй: arr=<number>,<number>...');
     }

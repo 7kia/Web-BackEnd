@@ -1,13 +1,12 @@
 <?php
 
-header('Content-Type: text/html');
+header('Content-Type:text/html; charset=utf-8');
 
 const ARG_COUNT = 1;
 
 function getParamFromGetRequest($arg_name)
 {
-    if(isset($_GET[$arg_name]))
-    {
+    if(isset($_GET[$arg_name])) {
         return $_GET[$arg_name];
     }
     
@@ -16,20 +15,19 @@ function getParamFromGetRequest($arg_name)
 
 try
 {
-    if(count($_GET) != ARG_COUNT)
-    {
+    if(count($_GET) != ARG_COUNT) {
         header('HTTP/1.0 400');
         throw new Exception('Используй: <stirng>:string');
     }
     print_r(
-		array_count_values(
-			str_split(
-				strtolower(
-					getParamFromGetRequest('string')
-				)
-			)
-		)
-	);
+        array_count_values(
+            str_split(
+                strtolower(
+                    getParamFromGetRequest('string')
+                )
+            )
+        )
+    );
 }
 catch (InvalidArgumentException $e)
 {
