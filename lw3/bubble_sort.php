@@ -49,6 +49,7 @@ try
     $numericArray = explode(',', getParamFromGetRequest('numbers'));
     foreach($numericArray as &$value){
         if(!is_numeric($value)) {
+			header('HTTP/1.0 400');
             throw new Exception('В массиве не все элементы числа');
         }
     }
