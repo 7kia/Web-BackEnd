@@ -89,7 +89,9 @@ try
         throw new Exception('В качестве аргумента укажите: password=<Строка>');
     }
 
-    echo "Strength =" . getPasswordStrength(getParamFromGetRequest('password')) . "|";
+	$strength = getPasswordStrength(getParamFromGetRequest('password'));
+    echo "Strength =" . $strength;
+	echo json_encode(array("Strength" => $strength));
 }
 catch (InvalidArgumentException $e)
 {
