@@ -1,0 +1,12 @@
+.userMessages {
+    box-sizing: border-box;
+
+    display: inline-block;
+    
+    min-width: 400px;
+    width: 75%;
+    height: 100%;
+    
+    text-align: center;
+    outline: 2px solid black;
+}
