@@ -36,5 +36,15 @@
     height: 160px;
     padding: 5px;
     border: 1px solid #D3D3D3;
+    
+    -moz-box-sizing: border-box; /* Для Firefox */
+    box-sizing: border-box;
+
+}
+
+.nameStr
+{
+    width: inherit;
+    overflow: hidden;
 }
 

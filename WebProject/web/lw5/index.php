@@ -12,7 +12,8 @@ $book1 = new Book();
 
 $bookList = array(
 	Book::generateWithData("First", 2017, 100, 4, "lw5\\img\\1.png"),
-	Book::generateWithData("Second", 2000, 1000, 5, "lw5\\img\\2.png")
+	Book::generateWithData("Firstddddddddddddddddddddddddddd", 2017, 100, 3, "lw5\\img\\1.png"),
+	Book::generateWithData("Second", 2000, 1000, 2, "lw5\\img\\2.png")
 );
 
 echo $twig->render(

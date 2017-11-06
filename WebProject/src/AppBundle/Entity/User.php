@@ -146,6 +146,7 @@ class User implements UserInterface, \Serializable
             $this->id,
             $this->username,
             $this->password,
+            $this->isAdmin,
             // see section on salt below
             // $this->salt,
         ));
@@ -158,8 +159,11 @@ class User implements UserInterface, \Serializable
             $this->id,
             $this->username,
             $this->password,
+            $this->isAdmin,
             // see section on salt below
             // $this->salt
         ) = unserialize($serialized);
     }
+
+
 }
