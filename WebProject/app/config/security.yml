@@ -33,6 +33,19 @@ security:
             form_login:
                 login_path: login
                 check_path: login
+             
+##           https://symfony.com/doc/current/security/guard_authentication.html 
+#            logout: ~
+#            guard:
+#                authenticators:
+#                    - AppBundle\Security\TokenAuthenticator
+#
+#            # if you want, disable storing the user in the session
+#            # stateless: true
+#
+#            # maybe other things, like form_login, remember_me, etc
+#            # ...
+            
 #            access_control:
 #                - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
 #                - { path: ^/, roles: ROLE_ADMIN }
